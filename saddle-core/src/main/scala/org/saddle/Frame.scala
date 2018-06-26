@@ -1783,7 +1783,7 @@ object Panel {
    * Factory method to create a Frame from tuples whose first element is
    * the column label and the second is a Vec of values.
    */
-  def apply[CX: ST: ORD, T: ST](
+  def apply[CX: ST: ORD](
     values: (CX, Vec[_])*): Frame[Int, CX, Any] = {
     val asIdxSeq = values.map(_._2).toIndexedSeq
     val idx = Index(values.map(_._1).toArray)
